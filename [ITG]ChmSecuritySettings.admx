@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="chmHelp" namespace="Microsoft.Policies.Windows.ChmHelp" />
+		<using prefix="windows" namespace="Microsoft.Policies.Windows" />
+ 	</policyNamespaces>
+	<resources minRequiredRevision="1.0"/>
+	
+	<!-- http://support.microsoft.com/kb/896054 -->
+
+	<categories>
+		<category name="ChmHelp" displayName="$(string.ChmHelp)">
+			<parentCategory ref="windows:System" />
+		</category>
+	</categories>
+
+	<policies>
+
+		<policy
+			name="ChmHelp_UrlAllowList"
+			class="Machine"
+			displayName="$(string.ChmHelp_UrlAllowList_DisplayName)"
+			explainText="$(string.ChmHelp_UrlAllowList_Explain)"
+			key="SOFTWARE\Microsoft\HTMLHelp\1.x\ItssRestrictions"
+			valueName="UrlAllowList"
+			presentation="$(presentation.ChmHelp_UrlAllowList)"
+		>
+			<parentCategory ref="chmHelp:ChmHelp" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNETSP1"/>
+
+			<elements>
+				<text id="UrlAllowList" valueName="UrlAllowList"/>
+			</elements>
+		</policy>
+		
+		<policy
+			name="ChmHelp_MaxAllowedZone"
+			class="Machine"
+			displayName="$(string.ChmHelp_MaxAllowedZone_DisplayName)"
+			explainText="$(string.ChmHelp_MaxAllowedZone_Explain)"
+			key="SOFTWARE\Microsoft\HTMLHelp\1.x\ItssRestrictions"
+			valueName="MaxAllowedZone"
+			presentation="$(presentation.ChmHelp_MaxAllowedZone)"
+		>
+			<parentCategory ref="chmHelp:ChmHelp" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNETSP1"/>
+			
+			<elements>
+				<enum
+					id="MaxAllowedZone"
+					valueName="MaxAllowedZone"
+				>
+					<item displayName="$(string.ChmHelp_MaxAllowedZone_Localhost)"><value><decimal value="0"/></value></item>
+					<item displayName="$(string.ChmHelp_MaxAllowedZone_Intranet)"><value><decimal value="1"/></value></item>
+					<item displayName="$(string.ChmHelp_MaxAllowedZone_TrustedSites)"><value><decimal value="2"/></value></item>
+					<item displayName="$(string.ChmHelp_MaxAllowedZone_Internet)"><value><decimal value="3"/></value></item>
+					<item displayName="$(string.ChmHelp_MaxAllowedZone_UntrastedSites)"><value><decimal value="4"/></value></item>
+				</enum>
+			</elements>
+		</policy>
+		
+	
+
+	</policies>
+</policyDefinitions>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <displayName>Описатель поискового сервиса Яндекс</displayName>
+  <description>Описатель поискового сервиса Яндекс</description>
+  <resources>
+
+		<stringTable>
+
+			<string id="ChmHelp">Справка .chm</string>
+			<string id="ChmHelp_UrlAllowList_DisplayName">Разрешить функциональность .chm в указанных расположениях</string>
+			<string id="ChmHelp_UrlAllowList_Explain">Данная политика позволяет разрешить полную функциональность ChmHelp в указанных расположениях.
+
+Подробности - http://support.microsoft.com/kb/896054, UrlAllowList.</string>
+			<string id="ChmHelp_MaxAllowedZone_DisplayName">Разрешить функциональность .chm в указанных зонах безопасности</string>
+			<string id="ChmHelp_MaxAllowedZone_Explain">Данная политика позволяет разрешить полную функциональность ChmHelp в указанных зонах безопасности (заданных для Internet Explorer).
+			
+При выборе конкретной зоны безопасности ChmHelp будет доступна в указанной зоне и во всех более надёжных. Например, при указании зоны "Интернет", функциональность chmHelp будет доступна в зонах "Интернет", "Надёжные узлы", "Интрасеть", "Локальный компьютер".
+
+Подробности - http://support.microsoft.com/kb/896054, MaxAllowedZone.
+				
+Если политика не задана - ChmHelp разрешена только в зоне "Локальный компьютер".</string>
+
+			<string id="ChmHelp_MaxAllowedZone_Localhost">Локальный компьютер</string>
+			<string id="ChmHelp_MaxAllowedZone_Intranet">Интрасеть</string>
+			<string id="ChmHelp_MaxAllowedZone_TrustedSites">Надёжные узлы</string>
+			<string id="ChmHelp_MaxAllowedZone_Internet">Интернет</string>
+			<string id="ChmHelp_MaxAllowedZone_UntrastedSites">Ненадёжные узлы</string>
+
+		</stringTable>
+
+		<presentationTable>
+
+			<presentation id="ChmHelp_UrlAllowList">
+				<textBox refId="UrlAllowList">
+					<label>Список путей через ";", при размещении chm файла в которых разрешена полная функциональность:</label>
+				</textBox>
+			</presentation>
+
+			<presentation id="ChmHelp_MaxAllowedZone">
+				<dropdownList
+					refId="MaxAllowedZone"
+					defaultItem="0"
+					noSort="true"
+				>Зона безопасности:</dropdownList>
+			</presentation>
+
+		</presentationTable>
+		
+	</resources>
+</policyDefinitionResources>
