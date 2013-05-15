@@ -32,7 +32,7 @@
 				<text id="UrlAllowList" valueName="UrlAllowList"/>
 			</elements>
 		</policy>
-		
+
 		<policy
 			name="ChmHelp_MaxAllowedZone"
 			class="Machine"
@@ -58,8 +58,23 @@
 				</enum>
 			</elements>
 		</policy>
-		
-	
+
+		<policy
+			name="ChmHelp_NestedProtocolList"
+			class="Machine"
+			displayName="$(string.ChmHelp_NestedProtocolList_DisplayName)"
+			explainText="$(string.ChmHelp_NestedProtocolList_Explain)"
+			key="SOFTWARE\Microsoft\HTMLHelp\1.x\ItssRestrictions"
+			valueName="NestedProtocolList"
+			presentation="$(presentation.ChmHelp_NestedProtocolList)"
+		>
+			<parentCategory ref="chmHelp:ChmHelp" />
+			<supportedOn ref="windows:SUPPORTED_WindowsXPSP2_Or_WindowsNETSP1"/>
+
+			<elements>
+				<text id="NestedProtocolList" valueName="NestedProtocolList"/>
+			</elements>
+		</policy>
 
 	</policies>
 </policyDefinitions>

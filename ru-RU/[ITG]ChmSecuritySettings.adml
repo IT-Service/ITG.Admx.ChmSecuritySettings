@@ -26,6 +26,15 @@
 			<string id="ChmHelp_MaxAllowedZone_Internet">Интернет</string>
 			<string id="ChmHelp_MaxAllowedZone_UntrastedSites">Ненадёжные узлы</string>
 
+			<string id="ChmHelp_NestedProtocolList_DisplayName">Разрешить дополнительные протоколы доступа к .chm файлам</string>
+			<string id="ChmHelp_NestedProtocolList_Explain">Данная политика позволяет разрешить дополнительные протоколы доступа к .chm файлам.
+
+Если данная политика отключена, доступен только протокол file:. Пример:
+
+http:;ftp:
+
+Подробности - http://support.microsoft.com/kb/896054, NestedProtocolList.</string>
+
 		</stringTable>
 
 		<presentationTable>
@@ -42,6 +51,12 @@
 					defaultItem="0"
 					noSort="true"
 				>Зона безопасности:</dropdownList>
+			</presentation>
+
+			<presentation id="ChmHelp_NestedProtocolList">
+				<textBox refId="NestedProtocolList">
+					<label>Допустимые протоколы:</label>
+				</textBox>
 			</presentation>
 
 		</presentationTable>
